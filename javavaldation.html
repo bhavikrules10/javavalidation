@@ -1,0 +1,163 @@
+<<!DOCTYPE html>
+    <html>
+
+    <head>
+        <Title></Title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script type="text/Javascript">
+    
+    function validation() {
+       var user = document.getElementById('user').value;
+       var passs = document.getElementById('pass').value;
+       var cpasss = document.getElementById('compass').value;
+       var no = document.getElementById('no').value;
+       var email = document.getElementById('email').value;
+
+
+
+
+
+
+       if (user == "") {
+           document.getElementById('username').innerHTML ="  **  Fill the username bitch";
+       return false;
+       }                     
+       if(user.length <=2 || user.length >20)
+       {
+           console.log("user length : ",user.length);
+           //alert(user)
+           document.getElementById('username').innerHTML = " ** user length must be between 2 and 20";
+        return false;
+       }
+       if(!isNaN(user)){
+        document.getElementById('username').innerHTML ="  **  Only characters are allowed";
+       return false;
+       }
+
+
+
+
+       if (passs == "") {
+           document.getElementById('passs').innerHTML ="  **  Password bitch";
+       return false;
+       }                
+       if((passs.length <=5) || (passs.length >20))
+       {
+           document.getElementById('passs').innerHTML =" ** Password length must pe between 5 and 20";
+        return false;
+        
+        if(passs!=cpasss){
+            document.getElementById('passs').innerHTML =" ** Password are not matching";
+        return false;
+        }
+       
+
+
+       if (cpasss == "") {
+           document.getElementById('cpasss').innerHTML ="  **  Confirm password";
+       return false;
+       }                     
+       
+
+
+       if (no == "") {
+           document.getElementById('nos').innerHTML ="  **  Enter mobile number bitch";
+       return false;
+       }                     
+       if(isNaN(no)){
+            document.getElementById('nos').innerHTML ="  **  User must write digits only";
+       return false;
+       }
+       if(no.length!=10){
+        document.getElementById('nos').innerHTML ="  **  Mobile number must be of 10 digits";
+       return false;
+       }
+
+
+
+       if (email == "") {
+           document.getElementById('emails').innerHTML ="  **  Fill the e-mail id bitch";
+       return false;
+       }
+
+       if(email.indexOf('@') <=0 ){
+        document.getElementById('emails').innerHTML ="  **  Enter valid e-mail id";
+       return false;
+       }
+       if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+        document.getElementById('emails').innerHTML ="  **  Enter valid e-mail id";
+       return false;
+       }
+
+       
+    }
+    }
+
+
+    </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <br>
+            <h1 class="text-success text-center"> Complete Form Validation In Javascript </h1>
+            <br>
+            <div class="col.lg.8  m-auto d-block">
+
+                <form action="#" onsubmit=" return validation()" class="bg.light">
+ 
+                    <div class="form-group">
+                        <label> Username: </label>
+                        <input type="text" name="user" class="form-control" id="user" autocomplete="off">
+                        <span id="username" class="text-danger" font-weight-bold></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label> Password: </label>
+                        <input type="password" name="pass" class="form-control" id="pass" autocomplete="off">
+                        <span id="passs" class="text-danger" font-weight-bold></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label> Confirm Password: </label>
+                        <input type="text" name="cpass" class="form-control" id="compass" autocomplete="off">
+                        <span id="cpasss" class="text-danger" font-weight-bold></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label> Mobile Number: </label>
+                        <input type="text" name="no" class="form-control" id="no" autocomplete="off">
+                        <span id="nos" class="text-danger" font-weight-bold></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label> e-mail id: </label>
+                        <input type="text" name="e-mail" class="form-control" id="email" autocomplete="off">
+                        <span id="emails" class="text-danger" font-weight-bold></span>
+                    </div>
+
+
+                    <input type="submit" name="submit" value="submit" class="btn btn-success" autocomplete="off">
+
+
+
+
+
+
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
